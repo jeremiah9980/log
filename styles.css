@@ -1,0 +1,74 @@
+:root {
+  --bg: #0a0a0b;
+  --bg-card: rgba(24, 24, 27, 0.4);
+  --border: #27272a;
+  --border-soft: #18181b;
+  --text: #e4e4e7;
+  --text-dim: #a1a1aa;
+  --text-faint: #71717a;
+  --text-ghost: #52525b;
+  --accent: #d4a574;
+  --call: #7ec4cf;
+  --text-color: #e8a87c;
+  --contacts: #c8a2c8;
+  --good: #86c5a8;
+  --warn: #e8c87c;
+  --bad: #d68a8a;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Söhne', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(212, 165, 116, 0.045) 0%, transparent 45%),
+    radial-gradient(circle at 85% 100%, rgba(126, 196, 207, 0.035) 0%, transparent 45%);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+.font-display { font-family: 'Fraunces', serif; font-feature-settings: 'ss01'; letter-spacing: -0.02em; }
+
+.scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.pulse-dot { animation: pulse-slow 2s ease-in-out infinite; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spin { animation: spin 1s linear infinite; }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fade-in 0.3s ease-out; }
+
+input[type="text"], input[type="password"] {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 9px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  border-radius: 2px;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+input[type="checkbox"] { accent-color: var(--accent); }
+
+button { font-family: inherit; cursor: pointer; }
+button:disabled { opacity: 0.3; cursor: not-allowed; }
