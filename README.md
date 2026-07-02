@@ -114,6 +114,34 @@ python3 -m http.server 8000
 
 You'll need to add `http://localhost:8000` to your OAuth client's authorized origins for local testing.
 
+### Tooling
+
+Pure utility functions are extracted into `utils.js` so they can be linted and tested outside the browser.
+
+Install dev dependencies:
+```bash
+npm install
+```
+
+Run ESLint:
+```bash
+npm run lint
+# auto-fix:
+npm run lint:fix
+```
+
+Run Prettier:
+```bash
+npm run format
+```
+
+Run tests (Vitest):
+```bash
+npm test
+```
+
+CI runs lint + tests automatically on every push and pull request via GitHub Actions (`.github/workflows/ci.yml`).
+
 ## License
 
 MIT — see LICENSE file.
